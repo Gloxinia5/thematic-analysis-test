@@ -24,13 +24,13 @@ def prompt(message):
         ],
     }
 
-    response = requests.post('https://api.pawan.krd/v1/chat/completions', headers=headers, json=json_data)
+    response = requests.post('https://api.pawan.krd/pai-001-light-beta/v1/chat/completions', headers=headers, json=json_data)
     return response.json()
 
 @app.route('/')
 def hello_world():
     return prompt("how are you?")
-   
+
 
 if __name__ == '__main__':
     app.run()
